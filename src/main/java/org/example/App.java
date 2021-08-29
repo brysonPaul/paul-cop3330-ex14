@@ -12,7 +12,7 @@ public class App {
         float orderAmt = Float.parseFloat( strIO("What is the order amount? ",sc));
         String state = strIO("What is the state? ",sc);
 
-        if(state.equalsIgnoreCase("WI")) {
+        if(state.equalsIgnoreCase("WI") || state.equalsIgnoreCase("Wisconsin")) {
             String subtotal = String.format("%.02f",orderAmt);//before tax
             System.out.println("The subtotal is $"+subtotal+".");
             tax = orderAmt*WI_TAX;
