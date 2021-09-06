@@ -11,16 +11,15 @@ public class App {
         final float WI_TAX = (float).055;
         float orderAmt = Float.parseFloat( strIO("What is the order amount? ",sc));
         String state = strIO("What is the state? ",sc);
-
+        String taxString = "";//will print nothing if the user does not get taxed
         if(state.equalsIgnoreCase("WI") || state.equalsIgnoreCase("Wisconsin")) {
             String subtotal = String.format("%.02f",orderAmt);//before tax
-            System.out.println("The subtotal is $"+subtotal+".");
             tax = orderAmt*WI_TAX;
             String formattedTax = String.format("%.02f",tax);
-            System.out.println("The tax is $"+formattedTax+".");
+           taxString = "The subtotal is $"+subtotal+".\nThe tax is $"+formattedTax+".\n";
         }
         String totalWithTax = String.format("%.02f",(orderAmt+tax));
-        System.out.println("The total is $"+totalWithTax+".");
+        System.out.println(taxString+"The total is $"+totalWithTax+".");
 
     }
     public static String strIO(String input, Scanner sc){
